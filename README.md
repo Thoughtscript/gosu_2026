@@ -10,14 +10,17 @@ docker compose up
 
 ```bash
 # Exec in
+## Three ways to interact with .gsp
 
 ## Gosu - change the package...
+### Evaluates the full directory path as the classpath!
 gosu src/main/gosu/thoughtscript/io/example/App.gsp
 
 ## Inline
 gosu -e 'print(\"Hello world!\")'
 
 ## Maven
+### Fresh compile before-hand...
 mvn compile
 mvn exec:java -Dexec.mainClass="thoughtscript.io.example.App"
 ```
@@ -50,7 +53,8 @@ mvn exec:java -Dexec.mainClass="thoughtscript.io.example.App"
     * Cannot name `Main.gsp` and have `Main` Class within it otherwise it throws a redundant Class Error.
         * `/app/src/main/gosu/thoughtscript/io/example/class/Example.gsp:[3,7] error: Duplicate class found at: thoughtscript.io.example.class.Example.Example.`
     * There is no Main Method in Gosu.
-    * Importing using `package` and `uses`.
+    * Importing using `package` and `uses`. `uses` is primarily for importing Java libraries.
+    * Gosu dot notation for accessing fields. `property` for `set` and `get`.
     * `gosu --version` must be run in the Terminal - for some reason adding it to the Dockerfile results in an error.
 
 ## Resources and Links
