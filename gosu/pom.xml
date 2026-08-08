@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>io.thoughtscript.example</groupId>
+    <artifactId>example</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0.0</version>
+    <name>example</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <gosu.version>1.18.7</gosu.version>
+        <java.version>11</java.version>
+    </properties>
+
+    <parent>
+        <groupId>org.gosu-lang.gosu</groupId>
+        <artifactId>gosu-parent</artifactId>
+        <version>1.18.7-incremental-alpha-12</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.gosu-lang.gosu</groupId>
+            <artifactId>gosu-core-api</artifactId>
+            <version>${gosu.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.gosu-lang.gosu</groupId>
+            <artifactId>gosu-core</artifactId>
+            <version>${gosu.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>src/main/gosu</sourceDirectory>
+        
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.15.0</version>
+                <configuration>
+                    <compilerId>gosuc</compilerId>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.gosu-lang.gosu</groupId>
+                        <artifactId>gosu-maven-compiler</artifactId>
+                        <version>${gosu.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+</project>

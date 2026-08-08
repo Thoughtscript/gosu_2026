@@ -1,0 +1,6 @@
+services:
+
+  gosu:
+    build:
+      context: ./gosu
+      dockerfile: dockerfile

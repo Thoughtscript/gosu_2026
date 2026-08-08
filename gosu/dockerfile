@@ -1,0 +1,16 @@
+FROM maven:3.9.16-amazoncorretto-11-alpine
+
+WORKDIR /
+# Local Gosu for terminal
+RUN apk add --no-cache curl unzip
+RUN curl -L -o gosu.zip http://search.maven.org/remotecontent?filepath=org/gosu-lang/gosu/gosu/1.14.16/gosu-1.14.16-full.zip && unzip gosu.zip -d /gosu
+ENV PATH="/gosu/gosu-1.14.16/bin:${PATH}"
+
+RUN echo "Creating working dir and copying files"
+RUN mkdir /app
+WORKDIR /app
+COPY . .
+
+RUN mvn clean install compile
+
+CMD ["bash", "run.sh"]
