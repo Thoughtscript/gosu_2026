@@ -57,6 +57,7 @@ mvn exec:java -Dexec.mainClass="thoughtscript.io.example.App"
         * FYI - this exploratory doesn't presently demontrate relative imports or `uses`.
     * Gosu dot notation for accessing fields. `property` for `set` and `get`.
     * `gosu --version` must be run in the Terminal - for some reason adding it to the Dockerfile results in an error.
+    * Double `WORKDIR` in [dockerfile](./gosu/dockerfile) due to recommended installation/setup.
 
 ## Resources and Links
 
