@@ -54,6 +54,7 @@ mvn exec:java -Dexec.mainClass="thoughtscript.io.example.App"
         * `/app/src/main/gosu/thoughtscript/io/example/class/Example.gsp:[3,7] error: Duplicate class found at: thoughtscript.io.example.class.Example.Example.`
     * There is no Main Method in Gosu.
     * Importing using `package` and `uses`. `uses` is primarily for importing Java libraries.
+        * FYI - this exploratory doesn't presently demontrate relative imports or `uses`.
     * Gosu dot notation for accessing fields. `property` for `set` and `get`.
     * `gosu --version` must be run in the Terminal - for some reason adding it to the Dockerfile results in an error.
 
