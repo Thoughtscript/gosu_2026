@@ -1,6 +1,8 @@
 # Gosu 2026
 
-> https://gosu-lang.github.io
+[![](https://img.shields.io/badge/Gosu-1.14.16-green.svg)](https://gosu-lang.github.io/)
+
+> Haven't used Gosu before. Exploring Java `.jars`, some syntax, dependencies, compilation, etc. Used a *bit* in the Insurance industry.
 
 ## Setup and Use
 
@@ -54,7 +56,7 @@ mvn exec:java -Dexec.mainClass="thoughtscript.io.example.App"
         * `/app/src/main/gosu/thoughtscript/io/example/class/Example.gsp:[3,7] error: Duplicate class found at: thoughtscript.io.example.class.Example.Example.`
     * There is no Main Method in Gosu.
     * Importing using `package` and `uses`. `uses` is primarily for importing Java libraries.
-        * FYI - this exploratory doesn't presently demontrate relative imports or `uses`.
+        * FYI - this exploratory example doesn't presently demontrate relative imports or `uses`.
     * Gosu dot notation for accessing fields. `property` for `set` and `get`.
     * `gosu --version` must be run in the Terminal - for some reason adding it to the Dockerfile results in an error.
     * Double `WORKDIR` in [dockerfile](./gosu/dockerfile) due to recommended installation/setup.
